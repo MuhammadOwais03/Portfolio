@@ -1,0 +1,337 @@
+#main-intro-container {
+    transition: all 1s ease;
+    /* Smooth transition for opacity */
+    opacity: 0;
+    /* visibility: hidden; */
+    /* Initially hidden */
+    margin-top: 2rem;
+}
+
+.visi {
+    opacity: 1;
+    /* visibility: visible; */
+    /* Make visible when the class is added */
+}
+
+
+#skills {
+    padding-top: 3rem;
+}
+
+
+/* Container for skill cards */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+}
+
+/* Individual skill card styles */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    /* Dark background for the card */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease, width 0.3s ease;
+    max-width: 280px;
+    height: 250px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Expanded size on hover */
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #1f2937;
+    /* Slightly lighter background on hover */
+    height: 270px;
+    width: 300px;
+}
+
+/* Skill card icons */
+.skill-card .icon {
+    font-size: 48px;
+    color: #facc15;
+    /* Bright yellow for contrast */
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .icon {
+    transform: rotate(15deg);
+}
+
+/* Skill card titles and descriptions are initially hidden */
+.skill-card h3,
+.skill-card p {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show titles and descriptions on hover */
+.skill-card:hover h3,
+.skill-card:hover p {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rotating Background Effect */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(135deg, #2d2d2d, #3a3a3a, #4b4b4b, #5a5a5a);
+    /* Dark gradient shades */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -1;
+    animation: rotate-bg 8s linear infinite;
+}
+
+/* Keyframes for Rotation */
+@keyframes rotate-bg {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Skill card title styles */
+.skill-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+    /* Light gray for modern appearance */
+}
+
+/* Skill card description styles */
+.skill-card p {
+    font-size: 14px;
+    color: #b3b3b3;
+    /* Muted gray for subtlety */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Shine Effect using ::after */
+.skill-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    z-index: 2;
+    transform: skewX(-45deg);
+    visibility: hidden;
+    /* Initially hidden */
+    transition: left 0.5s ease-in-out;
+    /* Smooth transition */
+}
+
+/* Show shine effect only on hover */
+.skill-card:hover::after {
+    visibility: visible;
+    /* Make shine visible on hover */
+    left: 100%;
+    /* Move shine across the card */
+}
+
+/* Keyframes for Shine Animation */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+/* Typing animation effect for the name */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    /* Ensure the text is centered */
+}
+
+/* Typing effect for the text */
+.typing {
+    width: 100%;
+
+
+    white-space: normal;
+    /* Allow text to wrap */
+    overflow: hidden;
+
+    font-family: monospace;
+    font-size: 40px;
+    /* Adjust the font size */
+    font-weight: bold;
+    display: inline-block;
+    word-wrap: break-word;
+    /* Ensure long words break and wrap properly */
+}
+
+.main-name {
+    color: black;
+    background-color: white;
+    text-wrap: wrap;
+
+}
+
+/* Highlighting the name
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+        
+    }
+} */
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+        /* Makes the cursor disappear */
+    }
+}
+
+.btn {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 150px;
+    height: 60px;
+    background-color: saddlebrown;
+    /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    
+    background: linear-gradient(90deg, #60a5fa, #4f46e5, #7c3aed);
+     */
+    background-color: #7c3aed;
+
+
+
+}
+
+
+/* .btn:hover {
+    background-position: right center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+} */
+
+
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid purple;
+    outline: none;
+    position: relative;
+    transition: 1s ease-in-out;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #222;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: white;
+    color: black;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+/* .btn span {
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+} */
+
+
+@media screen and (max-width:650px) {
+
+
+    #main-intro-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .typing {
+        font-size: 25px;
+    }
+
+    #main-intro-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (max-width:305px) {
+    .typing {
+        font-size: 20px;
+    }
+
+    #main-intro-content {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}

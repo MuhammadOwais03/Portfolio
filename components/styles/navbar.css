@@ -1,0 +1,162 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #15161A;
+    z-index: 99;
+}
+
+/* Icon Style */
+.navbar .icon {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Icons */
+.navbar .icon:hover {
+    transform: scale(1.2);
+    color: #ff0000;
+}
+
+/* Link Styles */
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Hidden Span Styling */
+.navbar a span {
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    margin-top: 0.3rem;
+}
+
+/* Show Span on Hover */
+.navbar a:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none;
+}
+
+/* Container for Links */
+.links-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* transform: scaleY(0); */
+    /* Start in folded state */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* Hidden by default */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show the Navbar Links on Mobile (Hamburger Active) */
+.navbar.active .links-container {
+    transform: scaleY(1);
+    /* Unfold */
+    opacity: 1;
+    visibility: visible;
+    /* Show when active */
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        top: -65px;
+        left: -10px;
+        background-color: transparent;
+        
+    }
+
+    .navbar .icon {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .navbar .links-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        transform: scaleX(0);
+        /* Start folded */
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+
+    .links-container a span {
+        position: absolute;
+        bottom: -20px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar.active .icon {
+        display: block;
+    }
+
+    .navbar.active {
+        background-color: #15161A;
+    }
+
+    .navbar.active .links-container {
+        transform: scaleX(1);
+        /* Unfold */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar a span {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+    }
+
+    .navbar a:hover span {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}

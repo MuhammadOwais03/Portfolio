@@ -1,0 +1,109 @@
+:root {
+    --shadow-color: #FF9E9E;
+    --shadow-color-light: white;
+}
+
+.apna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    background-image: repeating-linear-gradient(to bottom,
+            transparent 7px,
+            rgba(0, 0, 0, 0.8) 9px,
+            rgba(0, 0, 0, 0.8) 13px,
+            transparent 13px);
+    position: relative;
+    overflow: hidden;
+    transition: height 2s ease-in-out;
+}
+
+/* When collapsed, the height of .apna is set to 0 */
+.apna.collapsed {
+    height: 0;
+}
+
+/* Adjust font size and spacing for responsiveness */
+.logo {
+    font-family: "Sacramento", cursive;
+    font-weight: 900;
+    font-size: calc(10px + 10vh);
+    line-height: calc(20px + 10vh);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 3px #ffa500, 0 0 6px #ff8d00, 0 0 10px #ff0000;
+    animation: fadeIn 3s ease-in-out forwards, blink 12s infinite;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.fadeOut {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+/* Smaller devices */
+@media (max-width: 768px) {
+    .logo {
+        font-size: calc(8px + 8vh);
+        line-height: calc(16px + 8vh);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .logo {
+        font-size: calc(6px + 6vh);
+        line-height: calc(12px + 6vh);
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Blink animation */
+@keyframes blink {
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 3px #ffa500, 0 0 6px #ff8d00, 0 0 10px #ff0000;
+        color: #fff;
+    }
+}

@@ -621,7 +621,7 @@ ul {
     }
 
     .project-upper h2 {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 700;
 
 
@@ -638,7 +638,8 @@ ul {
     }
 
     .projects-navigation {
-        flex-direction: column;
+        /* flex-direction: column; */
+        width: 100%;
     }
 
 

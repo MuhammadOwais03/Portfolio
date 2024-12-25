@@ -6,7 +6,7 @@ const SocialLinks = () => {
         <div className=" social flex justify-center space-x-4 p-4 bg-background">
             {/* LinkedIn */}
             <a
-                href="https://www.linkedin.com/"
+                href="https://linkedin.com/in/muhammad-owais-1b782b269/"
                 className="flex items-center justify-center"
                 aria-label="LinkedIn"
                 target="_blank"
@@ -16,7 +16,7 @@ const SocialLinks = () => {
             </a>
             {/* GitHub */}
             <a
-                href="https://github.com/"
+                href="https://github.com/MuhammadOwais03/"
                 className="flex items-center justify-center"
                 aria-label="GitHub"
                 target="_blank"
@@ -26,7 +26,7 @@ const SocialLinks = () => {
             </a>
             {/* Email */}
             <a
-                href="mailto:example@example.com"
+                href="mailto:owaisiqbal2021@gmail.com"
                 className="flex items-center justify-center"
                 aria-label="Email"
             >

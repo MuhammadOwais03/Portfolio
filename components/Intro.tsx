@@ -5,10 +5,27 @@ import './styles/skill.css';
 
 
 import SocialLinks from './socialLinks';
+import { client } from '../src/lib/sanity';
+import { Inter } from 'next/font/google';
+
+// types.ts or any relevant file
+export interface CVFile {
+    asset: {
+        url: string;
+    };
+}
+
+export interface CVDocument {
+    _id: string;
+    cvFile: CVFile;
+}
+
+
 
 const Intro = () => {
     const [text, setText] = useState('');
     const [mainVisible, setMainVisible] = useState("no-visi")
+    const [CV, setCV] = useState(null);
 
     useEffect(() => {
         setTimeout(() => {
@@ -16,6 +33,34 @@ const Intro = () => {
 
         }, 1000)
     }, [])
+
+    const [cvUrl, setCvUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchCV = async () => {
+            try {
+                // Query to fetch the CV file URL from Sanity
+                const query = `*[_type == "cv"]{
+                    cvFile {
+                        asset->{url}
+                    }
+                }`;
+
+                // Fetch the data from Sanity
+                const data = await client.fetch<CVDocument[]>(query);
+                console.log("intro", data)
+
+                // If we have data, get the URL of the CV file
+                if (data && data.length > 0) {
+                    setCvUrl(data[0].cvFile.asset.url);
+                }
+            } catch (error) {
+                console.error("Error fetching CV:", error);
+            }
+        };
+
+        fetchCV();
+    }, []);
 
     useEffect(() => {
 
@@ -83,14 +128,20 @@ const Intro = () => {
 
             {/* Button Section */}
             <section id="button" className="w-full flex flex-wrap flex-row justify-center items-center gap-4 sm:gap-6">
+                {cvUrl && (
 
-                <a className="btn">
-                    <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
-                        <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
-                        <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
-                    </svg>
-                    <span>Download CV</span>
-                </a>
+                    <a
+                        className="btn"
+                        href={cvUrl ?? '#'} // The URL of the PDF file from Sanity
+                        download="My_CV.pdf"
+                    >
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+                        </svg>
+                        <span>Download CV</span>
+                    </a>
+                )}
                 <a className="btn" href='/projects'>
                     <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
                         <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />

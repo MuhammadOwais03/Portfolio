@@ -16,6 +16,7 @@
 
 #skills {
     padding-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -303,6 +304,101 @@ svg {
     font-size: 18px;
     font-weight: 100;
 } */
+
+
+/* Container Styles */
+.skills-logos {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: center;
+}
+
+.skills-logos h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    /* Light gray for modern appearance */
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    width: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Icons Container */
+.skills-logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Icon Styles */
+.skills-logo i {
+    font-size: 8rem;
+    color: gray;
+    /* Default icon color */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effects with Specific Colors */
+.skills-logo i:hover {
+    transform: scale(1.1);
+    /* Slight scaling effect on hover */
+}
+
+.skills-logo .bxl-react:hover {
+    color: #61DBFB;
+    /* React's original color */
+}
+
+.skills-logo .bxl-nextjs:hover {
+    color: #000000;
+    /* Next.js (black) */
+}
+
+.skills-logo .bxl-django:hover {
+    color: #092E20;
+    /* Django's original color */
+}
+
+.skills-logo .bxl-nodejs:hover {
+    color: #83CD29;
+    /* Node.js original green */
+}
+
+.skills-logo .bxl-github:hover {
+    color: #181717;
+    /* GitHub's original black */
+}
+
+.skills-logo .bxl-html5:hover {
+    color: #E34F26;
+    /* HTML5's original orange */
+}
+
+.skills-logo .bxl-css3:hover {
+    color: #1572B6;
+    /* CSS3's original blue */
+}
+
+.skills-logo .bxl-javascript:hover {
+    color: #F7DF1E;
+    /* JavaScript's original yellow */
+}
+
+.skills-logo .bxl-c-plus-plus:hover {
+    color: #00599C;
+    /* C++'s original blue */
+}
+
 
 
 @media screen and (max-width:650px) {

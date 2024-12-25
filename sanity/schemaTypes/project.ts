@@ -20,7 +20,7 @@ export default defineType({
             title: 'Technologies',
             type: 'array',
             of: [{ type: 'text' }],
-            
+
         }),
         defineField({
             name: 'mainImage',
@@ -42,6 +42,11 @@ export default defineType({
         defineField({
             name: 'url',
             title: 'Project URL',
+            type: 'url',
+        }),
+        defineField({
+            name: 'Gurl',
+            title: 'Github URL',
             type: 'url',
         }),
     ],

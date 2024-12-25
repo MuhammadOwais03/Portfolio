@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import './styles/skill.css';
 
 
+import SocialLinks from './socialLinks';
+
 const Intro = () => {
     const [text, setText] = useState('');
     const [mainVisible, setMainVisible] = useState("no-visi")
@@ -105,8 +107,12 @@ const Intro = () => {
                 </a>
             </section>
 
+            <section className="social-links">
+                <SocialLinks />
+            </section>
+
             {/* Experience Section */}
-            <section id="experience" className="w-full max-w-6xl text-center px-4 py-12 md:px-6 md:py-16 mt-8 bg-[#1E1F23] rounded-xl shadow-xl">
+            {/* <section id="experience" className="w-full max-w-6xl text-center px-4 py-12 md:px-6 md:py-16 mt-8 bg-[#1E1F23] rounded-xl shadow-xl">
                 <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-transparent bg-clip-text text-white drop-shadow-lg">
                     Professional Experience
                 </h2>
@@ -114,10 +120,10 @@ const Intro = () => {
                     Below is a summary of my professional experience, showcasing my journey in the software development and technology industry.
                 </p>
 
-                {/* Experience Cards */}
+                
                 <div className="flex justify-center items-center gap-8 flex-wrap w-full py-8">
 
-                    {/* Internship at Codsoft */}
+                    
                     <div className="experience-card bg-[#2E2E38] text-white rounded-lg p-6 shadow-xl w-[280px] sm:w-[320px] md:w-[350px] hover:scale-105 transition-transform duration-300 ease-in-out">
                         <div className="mb-4">
                             <h3 className="text-2xl font-semibold text-gradient">Software Developer Intern at Codsoft</h3>
@@ -128,7 +134,7 @@ const Intro = () => {
                         </p>
                     </div>
 
-                    {/* Internship at Smart City Lab */}
+                    
                     <div className="experience-card bg-[#2E2E38] text-white rounded-lg p-6 shadow-xl w-[280px] sm:w-[320px] md:w-[350px] hover:scale-105 transition-transform duration-300 ease-in-out">
                         <div className="mb-4">
                             <h3 className="text-2xl font-semibold text-gradient">Computer Vision Intern at Smart City Lab, NCAI</h3>
@@ -139,7 +145,7 @@ const Intro = () => {
                         </p>
                     </div>
 
-                    {/* Freelancing Experience */}
+                    
                     <div className="experience-card bg-[#2E2E38] text-white rounded-lg p-6 shadow-xl w-[280px] sm:w-[320px] md:w-[350px] hover:scale-105 transition-transform duration-300 ease-in-out">
                         <div className="mb-4">
                             <h3 className="text-2xl font-semibold text-gradient">Freelance Web Developer</h3>
@@ -150,7 +156,7 @@ const Intro = () => {
                         </p>
                     </div>
 
-                    {/* Software House Experience */}
+                    
                     <div className="experience-card bg-[#2E2E38] text-white rounded-lg p-6 shadow-xl w-[280px] sm:w-[320px] md:w-[350px] hover:scale-105 transition-transform duration-300 ease-in-out">
                         <div className="mb-4">
                             <h3 className="text-2xl font-semibold text-gradient">Founder & Lead Developer at Cognitech Labs</h3>
@@ -162,7 +168,7 @@ const Intro = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
 
 
@@ -178,36 +184,22 @@ const Intro = () => {
                 </p>
 
                 {/* Skill Cards */}
-                <div className="flex justify-center items-center flex-wrap gap-4 sm:gap-6 md:gap-8 w-full py-8">
-                    <div className="skills-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {/* Back-End Development */}
-                        <div className="skill-card">
-                            <div className="icon">⚙️</div>
-                            <h3>Back-End Development</h3>
-                            <p>Django, Flask, SQL, APIs</p>
-                        </div>
+                <div className="skills-logos flex  flex-col  flex-wrap gap-4 sm:gap-6 md:gap-8 w-full py-8">
 
-                        {/* Front-End Development */}
-                        <div className="skill-card">
-                            <div className="icon">🌐</div>
-                            <h3>Front-End Development</h3>
-                            <p>React, JavaScript, Tailwind CSS</p>
-                        </div>
-
-                        {/* Version Control */}
-                        <div className="skill-card">
-                            <div className="icon">📦</div>
-                            <h3>Version Control</h3>
-                            <p>Git, GitHub, AWS</p>
-                        </div>
-
-                        {/* Other Technologies */}
-                        <div className="skill-card">
-                            <div className="icon">💡</div>
-                            <h3>Other Technologies</h3>
-                            <p>JWT Authentication, Django Channels, Machine Learning (TensorFlow, scikit-learn)</p>
-                        </div>
+                    <h1>All Technologies</h1>
+                    <div className="skills-logo">
+                        <i className='bx bxl-react'></i>
+                        <i className='bx bxl-nextjs'></i>
+                        <i className='bx bxl-django'></i>
+                        <i className='bx bxl-nodejs'></i>
+                        {/* <i className='bx bxl-github'></i> */}
+                        <i className='bx bxl-html5'></i>
+                        <i className='bx bxl-css3'></i>
+                        <i className='bx bxl-javascript'></i>
+                        <i className='bx bxl-c-plus-plus'></i>
+                        {/* <i className='bx bx-server'></i>  */}
                     </div>
+
                 </div>
 
             </section>

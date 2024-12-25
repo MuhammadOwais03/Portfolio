@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "../../../components/navbar";
 import '../../../components/styles/project.css';
+import '../../../components/styles/navbar.css';
 import { useEffect, useState } from "react";
 import { client } from "../../lib/sanity"; // Import the Sanity client
 
@@ -19,13 +20,15 @@ interface Project {
         };
     }[];
     technologies: string[];
+    url: string;
+    Gurl: string;
 }
 
 const Projects: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
 
     // Fetch projects from Sanity
     useEffect(() => {
@@ -37,21 +40,18 @@ const Projects: React.FC = () => {
           mainImage{
             asset->{url}
           },
-          additionalImages[]{
+          additionalImages[] {
             asset->{url}
           },
           technologies,
+          url,
+        Gurl
         }`
             );
             setProjects(data);
         };
         fetchProjects();
     }, []);
-
-
-    useEffect(() => {
-        console.log(projects);
-    }, [projects])
 
     const handlePrev = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1));
@@ -61,14 +61,29 @@ const Projects: React.FC = () => {
         setCurrentIndex((prevIndex) => (prevIndex === projects.length - 1 ? 0 : prevIndex + 1));
     };
 
-    const openModal = (image: string) => {
-        setSelectedImage(image);
+    const openModal = (imageIndex: number) => {
+        setCurrentImageIndex(imageIndex);
         setIsModalOpen(true);
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
-        setSelectedImage(null);
+        setCurrentImageIndex(null);
+    };
+
+    const handleNextImage = () => {
+        if (currentImageIndex !== null && projects[currentIndex].additionalImages) {
+            setCurrentImageIndex((currentImageIndex + 1) % projects[currentIndex].additionalImages.length);
+        }
+    };
+
+    const handlePrevImage = () => {
+        if (currentImageIndex !== null && projects[currentIndex].additionalImages) {
+            setCurrentImageIndex(
+                (currentImageIndex - 1 + projects[currentIndex].additionalImages.length) %
+                projects[currentIndex].additionalImages.length
+            );
+        }
     };
 
     return (
@@ -76,7 +91,6 @@ const Projects: React.FC = () => {
             <Navbar />
             <div id="projects">
                 <div className="projects-upper">
-
                     <h1>My Projects</h1>
                     <p>Discover some of the amazing projects I've worked on!</p>
                 </div>
@@ -96,7 +110,24 @@ const Projects: React.FC = () => {
                     <div className="projects-lower">
                         <div className="project-upper">
                             <h2>{projects[currentIndex].title}</h2>
+                        </div>
+                        <div className="mt-8 flex flex-wrap flex-row justify-center items-center w-full gap-8">
 
+                            {projects[currentIndex].Gurl && (
+                                <a
+                                    href={projects[currentIndex].Gurl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                ><i className='bx bxl-github' style={styles.icon}></i> </a>
+                            )}
+
+                            {projects[currentIndex].url && (
+                                <a
+                                    href={projects[currentIndex].url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                ><i className='bx bx-link'></i></a>
+                            )}
                         </div>
                         <div className="project-middle">
                             <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -119,12 +150,9 @@ const Projects: React.FC = () => {
                                     }}
                                 ></path>
                             </svg>
-
                             <h2 className="project-title">Project Description</h2>
-                            <p className="project-description">
-                                {projects[currentIndex].description}
-                            </p>
-                            <h2 className="text-2xl">Technologies:</h2>
+                            <p className="project-description">{projects[currentIndex].description}</p>
+                            <h2>Technologies:</h2>
                             <ul>
                                 {projects[currentIndex].technologies.map((technology, index) => (
                                     <li key={index} className="technology-item">
@@ -132,14 +160,22 @@ const Projects: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
+
+
+
+
+
+
+
+
                         </div>
 
                         <div className="project-lower">
                             {projects[currentIndex].additionalImages.map((image, index) => (
                                 <div
-                                    className={`project-lower-img w-full ${index === 0 ? "large" : ""}`}
                                     key={index}
-                                    onClick={() => openModal(image.asset.url)}
+                                    className={`project-lower-img ${index === 0 ? "large" : ""}`}
+                                    onClick={() => openModal(index)}
                                     role="button"
                                     tabIndex={0}
                                 >
@@ -147,12 +183,22 @@ const Projects: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                        {isModalOpen && (
+
+                        {isModalOpen && currentImageIndex !== null && (
                             <div className="modal" onClick={closeModal}>
                                 <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                                    <img src={selectedImage || ''} alt="Selected Project" />
+                                    <img
+                                        src={projects[currentIndex].additionalImages[currentImageIndex].asset.url}
+                                        alt="Selected Project"
+                                    />
                                     <button className="close-btn" onClick={closeModal}>
                                         &times;
+                                    </button>
+                                    <button className="prev-btn" onClick={handlePrevImage}>
+                                        &#8249;
+                                    </button>
+                                    <button className="next-btn" onClick={handleNextImage}>
+                                        &#8250;
                                     </button>
                                 </div>
                             </div>
@@ -164,4 +210,15 @@ const Projects: React.FC = () => {
     );
 };
 
+
+const styles = {
+    icon: {
+        fontSize: '30px',
+        cursor: 'pointer',
+        transition: 'transform 0.3s, color 0.3s',
+    },
+};
 export default Projects;
+
+
+// export default Projects;

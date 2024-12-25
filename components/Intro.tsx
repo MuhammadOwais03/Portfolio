@@ -46,6 +46,8 @@ const Intro = () => {
                     }
                 }`;
 
+                console.log(query)
+
                 // Fetch the data from Sanity
                 const data = await client.fetch<CVDocument[]>(query);
                 console.log("intro", data)

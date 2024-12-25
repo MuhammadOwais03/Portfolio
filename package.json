@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/cli": "^3.68.3",
     "@sanity/client": "^6.24.1",
     "boxicons": "^2.1.4",
     "next": "15.1.2",

@@ -136,7 +136,7 @@ const Intro = () => {
                     <a
                         className="btn"
                         href={cvUrl ?? '#'} // The URL of the PDF file from Sanity
-                        download="My_CV.pdf"
+                        // download="My_CV.pdf"
                     >
                         <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
                             <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
@@ -152,7 +152,7 @@ const Intro = () => {
                     </svg>
                     <span>View Projects</span>
                 </a>
-                <a className="btn">
+                <a className="btn" href="/contact">
                     <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
                         <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
@@ -240,7 +240,7 @@ const Intro = () => {
                 {/* Skill Cards */}
                 <div className="skills-logos flex  flex-col  flex-wrap gap-4 sm:gap-6 md:gap-8 w-full py-8">
 
-                    <h1>All Technologies</h1>
+                    {/* <h1>All Technologies</h1> */}
                     <div className="skills-logo">
                         <i className='bx bxl-react'></i>
                         <i className='bx bxl-nextjs'></i>

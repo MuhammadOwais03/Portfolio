@@ -110,7 +110,7 @@
     .navbar .links-container {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 40px;
         transform: scaleX(0);
         /* Start folded */
         opacity: 0;

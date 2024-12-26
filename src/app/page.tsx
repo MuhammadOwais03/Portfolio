@@ -23,6 +23,7 @@ const HomePage = () => {
       <Logo />
 
       {isVisible && (
+
         <>
           <Navbar />
         </>

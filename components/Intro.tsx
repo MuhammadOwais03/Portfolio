@@ -121,11 +121,12 @@ const Intro = () => {
                     </div>
                 </div>
                 <p id="main-intro-content" className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-justify leading-relaxed tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300">
-                    I'm a passionate <strong>Computer System Engineer</strong> with a strong foundation in <strong>web development</strong>, <strong>software engineering</strong>, and <strong>problem-solving</strong>. I specialize in building scalable, user-friendly applications using technologies like <strong>Django</strong>, <strong>React</strong>, and <strong>Python</strong>.
+                    I'm a passionate <strong>Computer System Engineer</strong> with a strong foundation in <strong>web development</strong>, <strong>software engineering</strong>, and <strong>problem-solving</strong>. I specialize in building scalable, user-friendly applications using technologies like <strong>Django</strong>, <strong>React</strong>, <strong>Python</strong>, <strong>JavaScript</strong>, and the <strong>MERN stack</strong>. Recently, I have expanded my skill set to include <strong>Next.js</strong>, enabling me to create fast, SEO-friendly, and dynamic web applications.
                 </p>
                 <p id="main-intro-content" className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-justify leading-relaxed tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300">
                     I thrive in dynamic environments where I can apply my skills to solve real-world problems and contribute to impactful projects. Whether it's creating seamless user experiences, integrating powerful back-end systems, or exploring the latest in <strong>AI</strong> and <strong>machine learning</strong>, I'm always eager to take on new challenges. Welcome to my portfolio — take a look at my projects, skills, and achievements.
                 </p>
+
             </section>
 
             {/* Button Section */}
@@ -245,6 +246,7 @@ const Intro = () => {
                         <i className='bx bxl-nextjs'></i>
                         <i className='bx bxl-django'></i>
                         <i className='bx bxl-nodejs'></i>
+                        <i className='bx bxl-mongodb'></i>
                         {/* <i className='bx bxl-github'></i> */}
                         <i className='bx bxl-html5'></i>
                         <i className='bx bxl-css3'></i>

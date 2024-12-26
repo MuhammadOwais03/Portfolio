@@ -369,9 +369,9 @@ svg {
     /* Django's original color */
 }
 
-.skills-logo .bxl-nodejs:hover {
-    color: #83CD29;
-    /* Node.js original green */
+.skills-logo .bxl-nodejs:hover, 
+.skills-logo .bxl-mongodb:hover {
+    color: #83CD29; /* Node.js original green */
 }
 
 .skills-logo .bxl-github:hover {

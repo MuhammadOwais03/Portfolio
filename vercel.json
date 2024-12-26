@@ -1,0 +1,19 @@
+{
+    "builds": [
+      {
+        "src": "sanity/next.config.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/sanity/(.*)",
+        "dest": "/sanity/$1"
+      }
+    ]
+  }
+  

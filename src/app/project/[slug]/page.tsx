@@ -40,7 +40,7 @@ interface ProjectsProps {
     };
 }
 
-const Projects: React.FC<ProjectsProps> = ({ params }) => {
+const Projects = () => {
     const [project, setProject] = useState<Project | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);

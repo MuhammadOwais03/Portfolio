@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 #projects {
@@ -595,11 +596,13 @@ ul {
     transition: all 0.5s ease-in-out;
     top: 70px;
     z-index: 1;
+    display: none;
 
 }
 
 
 .dropdown.show {
+    display: flex;
     right: 0px;
     top: 70px;
 }

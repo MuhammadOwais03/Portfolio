@@ -20,7 +20,7 @@ const Navbar = () => {
             {/* Navbar Links */}
             <div className={`links-container ${isMenuOpen ? "active" : ""}`}>
                 <a href="/home"><i className="icon bx bx-home" style={styles.icon} title="Home"></i><span>Home</span></a>
-                <a href="/projects"><i className="icon bx bx-folder" style={styles.icon} title="Projects"></i><span>Projects</span></a>
+                <a href="/allProjects"><i className="icon bx bx-folder" style={styles.icon} title="Projects"></i><span>Projects</span></a>
                 <a href="/contact"><i className="icon bx bx-envelope" style={styles.icon} title="Contact"></i><span>Contact</span></a>
             </div>
         </div>

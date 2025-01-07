@@ -25,3 +25,7 @@ body {
   background-color: #15161A;
   overflow-x: hidden;
 }
+
+h1, h2 {
+  color: white !important;
+}

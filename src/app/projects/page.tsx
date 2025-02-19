@@ -111,7 +111,7 @@ const Projects: React.FC = () => {
                         <div className="project-upper">
                             <h2>{projects[currentIndex].title}</h2>
                         </div>
-                        <div className="mt-8 flex flex-wrap flex-row justify-center items-center w-full gap-8">
+                        <div className="bg-black mt-8 flex flex-wrap flex-row justify-center items-center w-full gap-8">
 
                             {projects[currentIndex].Gurl && (
                                 <a
@@ -216,6 +216,8 @@ const styles = {
         fontSize: '30px',
         cursor: 'pointer',
         transition: 'transform 0.3s, color 0.3s',
+        color: 'black',
+        
     },
 };
 export default Projects;

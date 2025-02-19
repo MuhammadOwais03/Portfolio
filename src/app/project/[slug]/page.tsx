@@ -157,7 +157,7 @@ const Projects = () => {
                     <div className="project-links">
                         {project.Gurl && (
                             <a href={project.Gurl} target="_blank" rel="noopener noreferrer">
-                                <i className="bx bxl-github text-black" style={styles.icon}></i>
+                                <i className="bx bxl-github text-black"></i>
                             </a>
                         )}
                         {project.url && (
@@ -241,6 +241,7 @@ const styles = {
         fontSize: "30px",
         cursor: "pointer",
         transition: "transform 0.3s, color 0.3s",
+        color:'white'
         
     },
 };

@@ -62,7 +62,7 @@ const Contact = () => {
           <div>
             <h1 className="text-gray-800 text-3xl font-bold">Let's Talk</h1>
             <p className="text-sm text-gray-500 mt-4">
-              Have a big idea or project? Reach out, and we'd love to help.
+              Have a big idea or project? Reach out, and I will love to help.
             </p>
             <div>
             

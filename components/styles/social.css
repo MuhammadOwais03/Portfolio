@@ -21,7 +21,7 @@
     border-radius: 50%;
     transition: all 0.3s ease;
 
-    transform:
+    /* transform:
         rotateX(51deg) rotateZ(43deg);
     transform-style: preserve-3d;
     border-radius: 32px;
@@ -31,7 +31,7 @@
         28px 28px 28px 0 rgba(34, 33, 81, 0.25);
     transition:
         .4s ease-in-out transform,
-        .4s ease-in-out box-shadow;
+        .4s ease-in-out box-shadow; */
 }
 
 .social-links i {

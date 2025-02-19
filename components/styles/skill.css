@@ -335,7 +335,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    /* gap: 2rem; */
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -343,61 +343,104 @@ svg {
 /* Icon Styles */
 .skills-logo i {
     font-size: 8rem;
-    color: gray;
-    /* Default icon color */
+    color: gray; /* Default icon color */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Hover Effects with Specific Colors */
 .skills-logo i:hover {
-    transform: scale(1.1);
-    /* Slight scaling effect on hover */
+    transform: scale(1.1); /* Slight scaling effect on hover */
 }
 
+/* Frontend */
 .skills-logo .bxl-react:hover {
-    color: #61DBFB;
-    /* React's original color */
+    color: #61DBFB; /* React */
 }
 
 .skills-logo .bxl-nextjs:hover {
-    color: #000000;
-    /* Next.js (black) */
-}
-
-.skills-logo .bxl-django:hover {
-    color: #092E20;
-    /* Django's original color */
-}
-
-.skills-logo .bxl-nodejs:hover, 
-.skills-logo .bxl-mongodb:hover {
-    color: #83CD29; /* Node.js original green */
-}
-
-.skills-logo .bxl-github:hover {
-    color: #181717;
-    /* GitHub's original black */
+    color: #000000; /* Next.js */
 }
 
 .skills-logo .bxl-html5:hover {
-    color: #E34F26;
-    /* HTML5's original orange */
+    color: #E34F26; /* HTML5 */
 }
 
 .skills-logo .bxl-css3:hover {
-    color: #1572B6;
-    /* CSS3's original blue */
+    color: #1572B6; /* CSS3 */
 }
 
 .skills-logo .bxl-javascript:hover {
-    color: #F7DF1E;
-    /* JavaScript's original yellow */
+    color: #F7DF1E; /* JavaScript */
 }
 
-.skills-logo .bxl-c-plus-plus:hover {
-    color: #00599C;
-    /* C++'s original blue */
+.skills-logo .bxl-typescript:hover {
+    color: #3178C6; /* TypeScript */
 }
+
+.skills-logo .bxl-tailwind-css:hover {
+    color: #38BDF8; /* Tailwind CSS */
+}
+
+.skills-logo .bxl-bootstrap:hover {
+    color: #7952B3; /* Bootstrap */
+}
+
+/* Backend */
+.skills-logo .bxl-django:hover {
+    color: #092E20; /* Django */
+}
+
+.skills-logo .bxl-python:hover {
+    color: #3776AB; /* Python */
+}
+
+.skills-logo .bxl-nodejs:hover {
+    color: #83CD29; /* Node.js */
+}
+
+.skills-logo .bx-server:hover {
+    color: #FF9800; /* Server icon */
+}
+
+/* Databases */
+.skills-logo .bxl-mongodb:hover {
+    color: #4DB33D; /* MongoDB */
+}
+
+.skills-logo .bxl-postgresql:hover {
+    color: #336791; /* PostgreSQL */
+}
+
+.skills-logo .bxl-mysql:hover {
+    color: #00758F; /* MySQL */
+}
+
+/* DevOps & Tools */
+.skills-logo .bxl-git:hover {
+    color: #F05032; /* Git */
+}
+
+.skills-logo .bxl-github:hover {
+    color: #181717; /* GitHub */
+}
+
+.skills-logo .bxl-docker:hover {
+    color: #2496ED; /* Docker */
+}
+
+.skills-logo .bxl-linux:hover {
+    color: #FCC624; /* Linux */
+}
+
+/* Programming Languages */
+.skills-logo .bxl-c-plus-plus:hover {
+    color: #00599C; /* C++ */
+}
+
+.skills-logo .bxl-java:hover {
+    color: #007396; /* Java */
+}
+
 
 
 

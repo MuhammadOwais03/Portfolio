@@ -65,11 +65,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/Mu.png" type="image/png" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `} style={{display:'flex', flexDirection:"column"}}>
         {children}
-        <footer>
-          <Foote />
-        </footer>
+     
       </body>
     </html>
   );

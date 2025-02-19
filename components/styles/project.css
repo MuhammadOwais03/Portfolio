@@ -604,7 +604,15 @@ ul {
     top: 70px;
     z-index: 1;
     display: none;
+    padding: 0.7rem;
 
+}
+
+
+.menu-bur {
+    margin-right: -120px;
+    
+    font-size: 20px!important;
 }
 
 

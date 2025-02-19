@@ -136,7 +136,7 @@ const Projects = () => {
             <div id="projects">
                 <div className="projects-dropdown">
                     <i
-                        className={`bx ${isMenuOpen ? "bx-x" : "bx-menu"}`}
+                        className={` menu-bur bx ${isMenuOpen ? "bx-x" : "bx-menu"}`}
                         onClick={toggleMenu}
                         style={styles.icon}
                     ></i>

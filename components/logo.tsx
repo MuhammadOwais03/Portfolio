@@ -2,8 +2,60 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import './styles/logo.css';
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import logo from "../public/logo.png";
+
+
+interface LogoProps {
+  /** --- timings --- */
+  fadeInDelay?: number;
+  fadeOutDelay?: number;
+  collapseDelay?: number;
+  redirectDelay?: number;
+
+  /** --- redirect --- */
+  redirectTo?: string;
+  autoRedirect?: boolean;
+
+  /** --- visuals --- */
+  backgroundColor?: string;
+  logoSize?: { width: number; height: number };
+
+  /** --- text --- */
+  title?: string;
+  titleSize?: string;
+  gradientColors?: string;
+
+  /** --- animation --- */
+  animationDuration?: string;
+  enableCollapse?: boolean;
+
+  /** --- loading --- */
+  showLoadingBar?: boolean;
+  loadingDuration?: number;
+  loadingBarColor?: string;
+  loadingTextColor?: string;
+  showLoadingLogo?: boolean;
+  loadingLogoDelay?: number;
+
+  /** --- custom classes --- */
+  containerClassName?: string;
+  logoClassName?: string;
+  titleClassName?: string;
+  loadingClassName?: string;
+
+  /** --- callbacks (❗ all optional) --- */
+  onFadeIn?: () => void;
+  onFadeOut?: () => void;
+  onCollapse?: () => void;
+  onRedirect?: () => void;
+  onLoadingComplete?: () => void;
+
+  /** --- logo asset --- */
+  logoSrc?: string | StaticImageData; 
+  logoAlt?: string;
+}
+
 
 const Logo = ({
   // Animation timings (in milliseconds)
@@ -53,7 +105,7 @@ const Logo = ({
   // Custom logo
   logoSrc = logo,
   logoAlt = "MO Logo"
-}) => {
+}: LogoProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);

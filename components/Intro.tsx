@@ -71,36 +71,36 @@ const Intro = () => {
   }, []);
 
   const skills = [
-  { name: "React", icon: "bxl-react text-5xl text-white", color: "from-blue-400 to-cyan-400", hoverColor: "hover:text-blue-400" },
-  { name: "Next.js", icon: "devicon-vercel-original text-5xl text-white", isDevicon: true },
-  { name: "Linux", icon: "devicon-linux-plain text-5xl text-white", isDevicon: true },
-  { name: "MySQL", icon: "devicon-mysql-original text-5xl text-white", isDevicon: true },
-  { name: "HTML5", icon: "bxl-html5 text-5xl text-white", color: "from-orange-400 to-red-500", hoverColor: "hover:text-orange-400" },
-  { name: "CSS3", icon: "bxl-css3 text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
-  { name: "JavaScript", icon: "bxl-javascript text-5xl text-white", color: "from-yellow-300 to-yellow-500", hoverColor: "hover:text-yellow-400" },
-  { name: "TypeScript", icon: "bxl-typescript text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
-  { name: "Tailwind", icon: "bxl-tailwind-css text-5xl text-white", color: "from-cyan-400 to-cyan-600", hoverColor: "hover:text-cyan-400" },
-  { name: "Bootstrap", icon: "bxl-bootstrap text-5xl text-white", color: "from-purple-500 to-purple-700", hoverColor: "hover:text-purple-500" },
-  { name: "Django", icon: "bxl-django text-5xl text-white", color: "from-green-400 to-emerald-500", hoverColor: "hover:text-green-400" },
-  { name: "Python", icon: "bxl-python text-5xl text-white", color: "from-yellow-400 to-orange-500", hoverColor: "hover:text-yellow-400" },
-  { name: "Node.js", icon: "bxl-nodejs text-5xl text-white", color: "from-green-500 to-green-700", hoverColor: "hover:text-green-500" },
-  { name: "MongoDB", icon: "bxl-mongodb text-5xl text-white", color: "from-green-400 to-green-600", hoverColor: "hover:text-green-400" },
-  { name: "PostgreSQL", icon: "bxl-postgresql text-5xl text-white", color: "from-blue-600 to-indigo-600", hoverColor: "hover:text-blue-600" },
-  { name: "Docker", icon: "bxl-docker text-5xl text-white", color: "from-blue-400 to-blue-600", hoverColor: "hover:text-blue-400" },
-  { name: "Git", icon: "bxl-git text-5xl text-white", color: "from-orange-400 to-red-500", hoverColor: "hover:text-orange-400" },
-  { name: "GitHub", icon: "bxl-github text-5xl text-white", color: "from-gray-400 to-gray-600", hoverColor: "hover:text-gray-400" },
-  { name: "C++", icon: "bxl-c-plus-plus text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
-  
-  // New additions (replacing Java)
-  { name: ".NET", icon: "devicon-dot-net-plain text-5xl text-white", isDevicon: true, color: "from-purple-500 to-blue-600", hoverColor: "hover:text-purple-400" },
-  { name: "FastAPI", icon: "devicon-fastapi-plain text-5xl text-white", isDevicon: true, color: "from-green-400 to-teal-500", hoverColor: "hover:text-green-400" },
-  { name: "Flask", icon: "devicon-flask-original text-5xl text-white", isDevicon: true, color: "from-gray-400 to-gray-600", hoverColor: "hover:text-gray-400" },
-  { name: "LangChain", icon: "bx-link-alt text-5xl text-white", color: "from-yellow-400 to-orange-500", hoverColor: "hover:text-yellow-400" },
-  { name: "Vector DB", icon: "bx-data text-5xl text-white", color: "from-cyan-400 to-blue-500", hoverColor: "hover:text-cyan-400" },
-  { name: "ChromaDB", icon: "bx-hdd text-5xl text-white", color: "from-purple-400 to-pink-500", hoverColor: "hover:text-purple-400" },
-  { name: "Pinecone", icon: "bx-search-alt text-5xl text-white", color: "from-green-400 to-emerald-500", hoverColor: "hover:text-green-400" },
-  { name: "Gemini", icon: "bx-brain text-5xl text-white", color: "from-blue-400 to-purple-500", hoverColor: "hover:text-blue-400" },
-];
+    { name: "React", icon: "bxl-react text-5xl text-white", color: "from-blue-400 to-cyan-400", hoverColor: "hover:text-blue-400" },
+    { name: "Next.js", icon: "devicon-vercel-original text-5xl text-white", isDevicon: true },
+    { name: "Linux", icon: "devicon-linux-plain text-5xl text-white", isDevicon: true },
+    { name: "MySQL", icon: "devicon-mysql-original text-5xl text-white", isDevicon: true },
+    { name: "HTML5", icon: "bxl-html5 text-5xl text-white", color: "from-orange-400 to-red-500", hoverColor: "hover:text-orange-400" },
+    { name: "CSS3", icon: "bxl-css3 text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
+    { name: "JavaScript", icon: "bxl-javascript text-5xl text-white", color: "from-yellow-300 to-yellow-500", hoverColor: "hover:text-yellow-400" },
+    { name: "TypeScript", icon: "bxl-typescript text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
+    { name: "Tailwind", icon: "bxl-tailwind-css text-5xl text-white", color: "from-cyan-400 to-cyan-600", hoverColor: "hover:text-cyan-400" },
+    { name: "Bootstrap", icon: "bxl-bootstrap text-5xl text-white", color: "from-purple-500 to-purple-700", hoverColor: "hover:text-purple-500" },
+    { name: "Django", icon: "bxl-django text-5xl text-white", color: "from-green-400 to-emerald-500", hoverColor: "hover:text-green-400" },
+    { name: "Python", icon: "bxl-python text-5xl text-white", color: "from-yellow-400 to-orange-500", hoverColor: "hover:text-yellow-400" },
+    { name: "Node.js", icon: "bxl-nodejs text-5xl text-white", color: "from-green-500 to-green-700", hoverColor: "hover:text-green-500" },
+    { name: "MongoDB", icon: "bxl-mongodb text-5xl text-white", color: "from-green-400 to-green-600", hoverColor: "hover:text-green-400" },
+    { name: "PostgreSQL", icon: "bxl-postgresql text-5xl text-white", color: "from-blue-600 to-indigo-600", hoverColor: "hover:text-blue-600" },
+    { name: "Docker", icon: "bxl-docker text-5xl text-white", color: "from-blue-400 to-blue-600", hoverColor: "hover:text-blue-400" },
+    { name: "Git", icon: "bxl-git text-5xl text-white", color: "from-orange-400 to-red-500", hoverColor: "hover:text-orange-400" },
+    { name: "GitHub", icon: "bxl-github text-5xl text-white", color: "from-gray-400 to-gray-600", hoverColor: "hover:text-gray-400" },
+    { name: "C++", icon: "bxl-c-plus-plus text-5xl text-white", color: "from-blue-500 to-blue-700", hoverColor: "hover:text-blue-500" },
+
+    // New additions (replacing Java)
+    { name: ".NET", icon: "devicon-dot-net-plain text-5xl text-white", isDevicon: true, color: "from-purple-500 to-blue-600", hoverColor: "hover:text-purple-400" },
+    { name: "FastAPI", icon: "devicon-fastapi-plain text-5xl text-white", isDevicon: true, color: "from-green-400 to-teal-500", hoverColor: "hover:text-green-400" },
+    { name: "Flask", icon: "devicon-flask-original text-5xl text-white", isDevicon: true, color: "from-gray-400 to-gray-600", hoverColor: "hover:text-gray-400" },
+    { name: "LangChain", icon: "bx-link-alt text-5xl text-white", color: "from-yellow-400 to-orange-500", hoverColor: "hover:text-yellow-400" },
+    { name: "Vector DB", icon: "bx-data text-5xl text-white", color: "from-cyan-400 to-blue-500", hoverColor: "hover:text-cyan-400" },
+    { name: "ChromaDB", icon: "bx-hdd text-5xl text-white", color: "from-purple-400 to-pink-500", hoverColor: "hover:text-purple-400" },
+    { name: "Pinecone", icon: "bx-search-alt text-5xl text-white", color: "from-green-400 to-emerald-500", hoverColor: "hover:text-green-400" },
+    { name: "Gemini", icon: "bx-brain text-5xl text-white", color: "from-blue-400 to-purple-500", hoverColor: "hover:text-blue-400" },
+  ];
 
   // Using actual social links from your component
   const SocialLinks = () => {
@@ -148,9 +148,9 @@ const Intro = () => {
   };
 
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(logo1)
-  },[])
+  }, [])
 
   return (
     <div
@@ -243,15 +243,15 @@ const Intro = () => {
 
             <div className="space-y-4 text-gray-300 leading-relaxed lg:text-justify text-center">
               <p>
-                I'm passionate about building <strong className="text-white">scalable web applications</strong> using modern technologies like{" "}
+                I'm a full-stack developer passionate about building <strong className="text-white">scalable, intelligent web applications</strong>. My core stack includes{" "}
                 <strong className="text-purple-400">Django</strong>, <strong className="text-blue-400">React</strong>, and{" "}
-                <strong className="text-green-400">Next.js</strong>. I specialize in creating seamless user experiences with robust backend systems.
+                <strong className="text-green-400">Next.js</strong>, with a focus on delivering robust backend architectures and seamless user experiences.
               </p>
               <p>
-                I thrive in dynamic environments where I can solve real-world problems and contribute to impactful projects. Always eager to explore{" "}
-                <strong className="text-pink-400">AI</strong> and <strong className="text-cyan-400">Machine Learning</strong>.
+                Lately, I've been diving deep into <strong className="text-yellow-400">Generative AI</strong> and <strong className="text-pink-400">LangChain</strong>, building smart applications that combine natural language understanding with real-world functionality. I'm always exploring how <strong className="text-cyan-400">AI</strong> and <strong className="text-emerald-400">Machine Learning</strong> can enhance modern development.
               </p>
             </div>
+
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4 pt-4 item-center justify-center">

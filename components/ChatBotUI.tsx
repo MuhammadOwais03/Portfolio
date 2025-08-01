@@ -138,7 +138,7 @@ const ChatbotUI = () => {
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
                   className="w-full bg-gray-700/50 border border-gray-600 rounded-xl px-3 py-2 text-sm text-white placeholder-gray-400 resize-none focus:outline-none focus:border-purple-500 transition-colors duration-200"
-                  rows="1"
+                  // rows="1"
                 />
               </div>
               <button

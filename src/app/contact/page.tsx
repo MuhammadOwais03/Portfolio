@@ -3,6 +3,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../../../components/navbar";
+import { Mail, Send, User, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
-    console.log("sss")
+    
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       alert("Please fill in all fields.");
       setIsSending(false);
@@ -34,14 +35,14 @@ const Contact = () => {
     try {
       const response = await emailjs.send(
         'service_n6idzql', 
-            'template_oh0e9hc', 
+        'template_oh0e9hc', 
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-       'oYjwPyaSfojAx10mr' 
+        'oYjwPyaSfojAx10mr' 
       );
       console.log("Email sent successfully:", response);
       setSuccessMessage("Message sent successfully! I'll get back to you soon.");
@@ -56,140 +57,180 @@ const Contact = () => {
 
   return (
     <>
-    <Navbar/>
-      <div className="mt-20">
-        <div className="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-black shadow-sm rounded-md font-[sans-serif]">
-          <div>
-            <h1 className="text-gray-800 text-3xl font-bold">Let's Talk</h1>
-            <p className="text-sm text-gray-500 mt-4">
-              Have a big idea or project? Reach out, and I will love to help.
-            </p>
-            <div>
-            
-            <div className="mt-12">
-              <h2 className="text-gray-800 text-base font-bold">Email</h2>
-              <ul className="mt-4">
-                <li className="flex items-center">
-                  <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      fill="#333"
-                      viewBox="0 0 479.058 479.058"
-                    >
-                      <path
-                        d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                  </div>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-[#e6e6e6cf]  text-sm ml-4"
-                  >
-                    <small className="block">Mail</small>
-                    <strong>owaisiqbak2021@gmail.com</strong>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            {/* <div className="mt-12">
-              <h2 className="text-gray-800 text-base font-bold">Socials</h2>
-              <ul className="flex mt-4 space-x-4">
-                <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      fill="#333"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      fill="#333"
-                      viewBox="0 0 511 512"
-                    >
-                      <path
-                        d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0"
-                        data-original="#000000"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      fill="#333"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div> */}
-          </div>
-          </div>
-          
-          <form onSubmit={handleSubmit} className="ml-auto space-y-4">
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Name"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-red-500"
-            />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-red-500"
-            />
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder="Subject"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-red-500"
-            />
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message"
-              rows={6}
-              className="w-full text-gray-800 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-red-500"
-            />
-            <button
-              type="submit"
-              disabled={isSending}
-              className="text-white bg-[#ff0000] hover:bg-white hover:text-black hover:font-semibold transition-all transition-shadow duration-75 rounded-md text-sm px-4 py-2.5 w-full !mt-6"
-            >
-              {isSending ? "Sending..." : "Send"}
-            </button>
-          </form>
-          {successMessage && <p className="text-green-500 text-sm mt-2">{successMessage}</p>}
+      <Navbar />
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-500 rounded-full opacity-10 animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-blue-500 rounded-full opacity-5 animate-pulse" style={{animationDelay: '4s'}}></div>
+          <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-green-500 rounded-full opacity-5 animate-pulse" style={{animationDelay: '6s'}}></div>
         </div>
+
+        <div className="relative z-10 py-20 px-4">
+          {/* Header Section */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-fade-in">
+              Let's Talk
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6 animate-expand"></div>
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed animate-fade-in-up" style={{animationDelay: '300ms', animationFillMode: 'both'}}>
+              Have a big idea or project? I'd love to help bring your vision to life. Let's create something amazing together.
+            </p>
+          </div>
+
+          {/* Main Content */}
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              
+              {/* Contact Info Section */}
+              <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '400ms', animationFillMode: 'both'}}>
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-6 text-white">Get In Touch</h2>
+                  <p className="text-gray-400 mb-8 leading-relaxed">
+                    Ready to discuss your next project or just want to say hello? I'm always excited to connect with fellow creators and innovators.
+                  </p>
+                  
+                  {/* Contact Item */}
+                  <div className="flex items-center space-x-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-700/30 transition-colors duration-300 group">
+                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Mail className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold">Email</h3>
+                      <p className="text-gray-400">owaisiqbak2021@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Features */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 rounded-xl p-6 border border-purple-500/20">
+                    <div className="bg-purple-500/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                      <User className="h-6 w-6 text-purple-400" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Quick Response</h3>
+                    <p className="text-gray-400 text-sm">I'll get back to you within 24 hours</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-pink-900/20 to-pink-800/10 rounded-xl p-6 border border-pink-500/20">
+                    <div className="bg-pink-500/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                      <MessageCircle className="h-6 w-6 text-pink-400" />
+                    </div>
+                    <h3 className="text-white font-semibold mb-2">Let's Collaborate</h3>
+                    <p className="text-gray-400 text-sm">Open to exciting opportunities</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Form */}
+              <div className="animate-fade-in-up" style={{animationDelay: '600ms', animationFillMode: 'both'}}>
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-6 text-white">Send Message</h2>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-gray-300 font-medium">Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your name"
+                          className="w-full bg-gray-800/50 border border-gray-600 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <label className="text-gray-300 font-medium">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="your@email.com"
+                          className="w-full bg-gray-800/50 border border-gray-600 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <label className="text-gray-300 font-medium">Subject</label>
+                      <input
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        placeholder="What's this about?"
+                        className="w-full bg-gray-800/50 border border-gray-600 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <label className="text-gray-300 font-medium">Message</label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell me about your project..."
+                        rows={6}
+                        className="w-full bg-gray-800/50 border border-gray-600 rounded-xl py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
+                      />
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      disabled={isSending}
+                      className="group relative w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center justify-center space-x-2">
+                        <Send className="h-5 w-5" />
+                        <span>{isSending ? "Sending..." : "Send Message"}</span>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </button>
+                  </form>
+                  
+                  {successMessage && (
+                    <div className="mt-6 p-4 bg-green-500/20 border border-green-500/50 rounded-xl">
+                      <p className="text-green-400 text-center">{successMessage}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          
+          @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          
+          @keyframes expand {
+            from { width: 0; }
+            to { width: 96px; }
+          }
+          
+          .animate-fade-in {
+            animation: fade-in 0.8s ease-out;
+          }
+          
+          .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out;
+          }
+          
+          .animate-expand {
+            animation: expand 1s ease-out 0.5s both;
+          }
+        `}</style>
       </div>
     </>
   );

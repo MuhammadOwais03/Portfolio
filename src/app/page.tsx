@@ -4,6 +4,7 @@ import Intro from '../../components/Intro';
 import Navbar from '../../components/navbar';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Updated import
+import ChatbotUI from '../../components/ChatBotUI';
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,7 @@ const HomePage = () => {
     const timer = setTimeout(() => {
       setIsVisible(true); // Make Intro component visible after 7 seconds
       router.push('/home'); // Navigate to the home page
-    }, 7500); // 7500ms = 7.5 seconds
+    }, 10500); // 7500ms = 7.5 seconds
 
     return () => clearTimeout(timer); // Cleanup the timer when the component unmounts
   }, []);
@@ -26,9 +27,11 @@ const HomePage = () => {
 
         <>
           <Navbar />
+          
         </>
       )}
       {/* Render Navbar only when isVisible is true */}
+      
     </div>
   );
 };

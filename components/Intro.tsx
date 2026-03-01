@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { client } from "../src/lib/sanity";
-import logo1 from '../public/logo1.png'
+import logo1 from '../public/logo1.jpeg'
 import Image from "next/image";
 
 // Types for Sanity CV data

@@ -32,6 +32,7 @@ const HomePage = () => {
       )}
       {/* Render Navbar only when isVisible is true */}
       
+      
     </div>
   );
 };
